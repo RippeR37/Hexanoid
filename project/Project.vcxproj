@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B82B8F97-5941-4197-8306-F2848B794281}</ProjectGuid>
+    <RootNamespace>Project</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\bin\</OutDir>
+    <IntDir>build\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\libs\glew-1.11.0\include;..\libs\glfw-3.0.4\include;..\libs\glm-0.9.5.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4290;4996;4018;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>..\libs\glfw-3.0.4\lib-msvc110;..\libs\glew-1.11.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Controllers\State.cpp" />
+    <ClCompile Include="..\src\Controllers\States\Gameplay.cpp" />
+    <ClCompile Include="..\src\Controllers\States\GameplayEnd.cpp" />
+    <ClCompile Include="..\src\Controllers\States\Initialization.cpp" />
+    <ClCompile Include="..\src\Controllers\States\Shutdown.cpp" />
+    <ClCompile Include="..\src\Game.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Models\Ball.cpp" />
+    <ClCompile Include="..\src\Models\Brick.cpp" />
+    <ClCompile Include="..\src\Models\Groups\BrickGroup.cpp" />
+    <ClCompile Include="..\src\Models\Groups\ItemGroup.cpp" />
+    <ClCompile Include="..\src\Models\Groups\WallGroup.cpp" />
+    <ClCompile Include="..\src\Models\Item.cpp" />
+    <ClCompile Include="..\src\Models\Paddle.cpp" />
+    <ClCompile Include="..\src\Models\States.cpp" />
+    <ClCompile Include="..\src\Models\Wall.cpp" />
+    <ClCompile Include="..\src\Utils\Clock.cpp" />
+    <ClCompile Include="..\src\Utils\Exception.cpp" />
+    <ClCompile Include="..\src\Utils\Exceptions\FatalError.cpp" />
+    <ClCompile Include="..\src\Utils\File.cpp" />
+    <ClCompile Include="..\src\Utils\GL+\Context.cpp" />
+    <ClCompile Include="..\src\Utils\GL+\MatrixStack.cpp" />
+    <ClCompile Include="..\src\Utils\GL+\Program.cpp" />
+    <ClCompile Include="..\src\Utils\GL+\Shader.cpp" />
+    <ClCompile Include="..\src\Utils\GL+\Texture.cpp" />
+    <ClCompile Include="..\src\Utils\GL+\Uniform.cpp" />
+    <ClCompile Include="..\src\Utils\GL+\VertexArray.cpp" />
+    <ClCompile Include="..\src\Utils\GL+\VertexBuffer.cpp" />
+    <ClCompile Include="..\src\Utils\Image.cpp" />
+    <ClCompile Include="..\src\Utils\Line.cpp" />
+    <ClCompile Include="..\src\Utils\Point.cpp" />
+    <ClCompile Include="..\src\Utils\TimeEvent.cpp" />
+    <ClCompile Include="..\src\Utils\TimeLoop.cpp" />
+    <ClCompile Include="..\src\Utils\Timer.cpp" />
+    <ClCompile Include="..\src\Utils\Window.cpp" />
+    <ClCompile Include="..\src\Views\Groups\ViewBrickGroup.cpp" />
+    <ClCompile Include="..\src\Views\Groups\ViewItemGroup.cpp" />
+    <ClCompile Include="..\src\Views\Groups\ViewWallGroup.cpp" />
+    <ClCompile Include="..\src\Views\ViewBackground.cpp" />
+    <ClCompile Include="..\src\Views\ViewBall.cpp" />
+    <ClCompile Include="..\src\Views\ViewBorder.cpp" />
+    <ClCompile Include="..\src\Views\ViewBrick.cpp" />
+    <ClCompile Include="..\src\Views\ViewItem.cpp" />
+    <ClCompile Include="..\src\Views\ViewPaddle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Controllers\State.h" />
+    <ClInclude Include="..\src\Controllers\States\Gameplay.h" />
+    <ClInclude Include="..\src\Controllers\States\GameplayEnd.h" />
+    <ClInclude Include="..\src\Controllers\States\Initialization.h" />
+    <ClInclude Include="..\src\Controllers\States\Shutdown.h" />
+    <ClInclude Include="..\src\Game.h" />
+    <ClInclude Include="..\src\Models\Ball.h" />
+    <ClInclude Include="..\src\Models\Brick.h" />
+    <ClInclude Include="..\src\Models\Direction.h" />
+    <ClInclude Include="..\src\Models\Groups\BrickGroup.h" />
+    <ClInclude Include="..\src\Models\Groups\ItemGroup.h" />
+    <ClInclude Include="..\src\Models\Groups\WallGroup.h" />
+    <ClInclude Include="..\src\Models\Item.h" />
+    <ClInclude Include="..\src\Models\Paddle.h" />
+    <ClInclude Include="..\src\Models\States.h" />
+    <ClInclude Include="..\src\Models\Wall.h" />
+    <ClInclude Include="..\src\Utils\Clock.h" />
+    <ClInclude Include="..\src\Utils\Exception.h" />
+    <ClInclude Include="..\src\Utils\Exceptions\FatalError.h" />
+    <ClInclude Include="..\src\Utils\File.h" />
+    <ClInclude Include="..\src\Utils\GL+\Context.h" />
+    <ClInclude Include="..\src\Utils\GL+\MatrixStack.h" />
+    <ClInclude Include="..\src\Utils\GL+\Program.h" />
+    <ClInclude Include="..\src\Utils\GL+\Shader.h" />
+    <ClInclude Include="..\src\Utils\GL+\Texture.h" />
+    <ClInclude Include="..\src\Utils\GL+\Uniform.h" />
+    <ClInclude Include="..\src\Utils\GL+\VertexArray.h" />
+    <ClInclude Include="..\src\Utils\GL+\VertexBuffer.h" />
+    <ClInclude Include="..\src\Utils\GL+\VertexBuffer.hpp" />
+    <ClInclude Include="..\src\Utils\Image.h" />
+    <ClInclude Include="..\src\Utils\Line.h" />
+    <ClInclude Include="..\src\Utils\Point.h" />
+    <ClInclude Include="..\src\Utils\TimeEvent.h" />
+    <ClInclude Include="..\src\Utils\TimeLoop.h" />
+    <ClInclude Include="..\src\Utils\Timer.h" />
+    <ClInclude Include="..\src\Utils\Window.h" />
+    <ClInclude Include="..\src\Views\Groups\ViewBrickGroup.h" />
+    <ClInclude Include="..\src\Views\Groups\ViewItemGroup.h" />
+    <ClInclude Include="..\src\Views\Groups\ViewWallGroup.h" />
+    <ClInclude Include="..\src\Views\ViewBackground.h" />
+    <ClInclude Include="..\src\Views\ViewBall.h" />
+    <ClInclude Include="..\src\Views\View.h" />
+    <ClInclude Include="..\src\Views\ViewBorder.h" />
+    <ClInclude Include="..\src\Views\ViewBrick.h" />
+    <ClInclude Include="..\src\Views\ViewItem.h" />
+    <ClInclude Include="..\src\Views\ViewPaddle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\bin\assets\shaders\item.fs" />
+    <None Include="..\bin\assets\shaders\item.vs" />
+    <None Include="..\bin\assets\shaders\simple.fs" />
+    <None Include="..\bin\assets\shaders\simple.vs" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
